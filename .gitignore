@@ -179,7 +179,6 @@ $RECYCLE.BIN/
 *.msm
 *.msp
 
-# Windows shortcuts
-*.lnk
+build/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,windows,linux
