@@ -1,7 +1,11 @@
-import { Request, Response, Router } from 'express';
+import { Router } from 'express';
+import { createNote, deleteNote, getNote, getNotes, updateNote } from '../controller/NoteController';
+
 
 export const notesRoute = Router();
 
-notesRoute.get('/', (req: Request, res:Response) => {
-    res.send("Notes");
-});
+notesRoute.get("/", getNotes);
+notesRoute.get("/:id", getNote);
+notesRoute.post("/", createNote);
+notesRoute.put("/:id", updateNote);
+notesRoute.delete("/:id", deleteNote);

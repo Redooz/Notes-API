@@ -22,13 +22,15 @@ export class NoteService {
         return note;
     }
 
-    async create(data:any): Promise<Note> {
+    async create(data: any): Promise<Note> {
         const newNote = Note.create();
         
-        newNote.title = data.title;
-        newNote.description = data.description;
+        const { title, description } = data
 
-        newNote.save()
+        newNote.title = title;
+        newNote.description = description;
+
+        await newNote.save()
         return newNote
     }
 
@@ -41,8 +43,10 @@ export class NoteService {
             throw boom.notFound("Note not found");
         }
 
-        note.title = changes.title;
-        note.description = changes.description;
+        const { title, description } = changes
+
+        note.title = title;
+        note.description = description;
 
         await Note.update({id: note.id,}, note)
 
