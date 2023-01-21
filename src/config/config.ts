@@ -2,7 +2,7 @@ export const config = {
     env: process.env.NODE_ENV || 'dev',
     connection: process.env.TYPEORM_CONNECTION,
     host: process.env.TYPEORM_HOST,
-    port: parseInt(process.env.TYPEORM_PORT),
+    port: 3306,
     dBUser: process.env.TYPEORM_USERNAME,
     dbPassword: process.env.TYPEORM_PASSWORD,
     db: process.env.TYPEORM_DATABASE,
