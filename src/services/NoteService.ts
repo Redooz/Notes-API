@@ -62,7 +62,7 @@ export class NoteService {
             throw boom.notFound("Note not found");
         }
 
-        await Note.delete({id: note.id})
+        await Note.softRemove(note)
         
         return { id };
     }
